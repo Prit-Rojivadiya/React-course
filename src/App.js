@@ -1,5 +1,7 @@
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses.js";
+import NewExpense from "./components/NewExpense/NewExpense";
+import React, { useEffect, useState } from "react";
 
 function App() {
   const expenses = [
@@ -23,11 +25,30 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  const [_expenses, updateExpenses] = useState(expenses);
+
+  useEffect(() => {
+    console.log(_expenses);
+  }, [_expenses]);
+
+  const addExpenseHandler = (expense) => {
+    console.log("in appjs");
+    console.log(expense);
+    updateExpenses((prevState) => {
+      const updatedExpenses = [expense, ...prevState];
+      return updatedExpenses;
+      // state cannot be directly updated !important
+      // prevState.push(expense);
+      // return prevState;
+    });
+    console.log(_expenses);
+  };
 
   return (
     <div>
       <div className="expenses">
-        <Expenses expenses={expenses} />
+        <NewExpense onAddExpense={addExpenseHandler} />
+        <Expenses expenses={_expenses} />
       </div>
     </div>
   );
