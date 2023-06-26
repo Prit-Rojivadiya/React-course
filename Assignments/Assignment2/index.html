@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment -2 | TODO LIST</title>
+    <meta
+      name="google-site-verification"
+      content="iShmiK-QJ6RMbCgeTfCBh29tjDM2WytAG_tHcCOUiRU"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/fdad3727e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onload="showMessage()">
+    <!-- Add Task Section -->
+    <section class="addTask">
+      <form class="container">
+        <div class="inputDiv">
+          <input
+            type="text"
+            name="input"
+            id="input"
+            placeholder="What need to be done?"
+          />
+        </div>
+        <div class="btnDiv">
+          <button id="btn" disabled>
+            <i class="fas fa-plus-circle"></i> Add
+          </button>
+        </div>
+      </form>
+    </section>
+    <!-- Task List Section -->
+    <section class="taskList">
+      <div class="container">
+        <h1>Todo List</h1>
+        <div id="listItems"></div>
+        <p class="message"></p>
+      </div>
+    </section>
+  </body>
+</html>
